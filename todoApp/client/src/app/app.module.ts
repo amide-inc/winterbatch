@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { NavbarComponent } from './inc/navbar/navbar.component';
+import { MainComponent } from './pages/main/main.component';
+import { EditComponent } from './pages/edit/edit.component';
+import { CreateComponent } from './pages/create/create.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    MainComponent,
+    EditComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

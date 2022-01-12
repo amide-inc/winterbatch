@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3>Todos</h3>
+            <div class="row p-3" *ngFor="let d of data">
+                <div class="card w-100">
+                    <div class="card-header bg-warning">Todo Id: {{d.id}}</div>
+                    <div class="card-body">
+                        <h3>{{d.title}}</h3>
+                        <p>{{d.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-right">
+                            <button class="btn btn-info">Edit</button>
+                            <button class="btn btn-outline-danger ml-3">Delete</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
