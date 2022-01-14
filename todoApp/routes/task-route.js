@@ -13,7 +13,8 @@ router.get('/', (req, res) => {
                     title: doc.title,
                     description: doc.description,
                     baseUrl: '/task',
-                    method: 'GET'
+                    method: 'GET',
+                    date: doc.date
                 };
             })
             res.json({ success: true, data: data });

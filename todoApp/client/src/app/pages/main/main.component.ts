@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
+declare var $:any;
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -26,5 +27,18 @@ export class MainComponent implements OnInit {
           }
         )
   }
-
+  
+  deleteTodo(id) {
+    this.todoService.deleteTodo(id)
+        .subscribe((res) => {
+          console.log(res);
+          if(res.success) {
+            this.getTodods();
+            $('.toast').toast('show')
+            setTimeout(() => {
+              $('.toast').toast('hide')
+            }, 3000)
+          }
+        })
+  }
 }

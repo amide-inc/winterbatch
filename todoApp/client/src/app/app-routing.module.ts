@@ -7,7 +7,7 @@ import { MainComponent } from './pages/main/main.component';
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'create', component:CreateComponent},
-  {path: 'edit', component:EditComponent}
+  {path: 'edit/:id', component:EditComponent}
 ];
 
 @NgModule({
