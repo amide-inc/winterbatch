@@ -2,7 +2,7 @@ const router = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
-const checkAuth = require('../middleware/check-auth')
+const checkAuth = require('../middleware/check-auth');
 router.post('/signup', (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if(err) {
