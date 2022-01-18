@@ -12,4 +12,14 @@ export class AuthService {
   signup(data):Observable<any>{
     return this.http.post("http://localhost:8080/auth/signup", data);
   }
+  login(data):Observable<any> {
+    return this.http.post("http://localhost:8080/auth/login", data);
+  }
+
+  getProfile():Observable<any> {
+    const headers = {
+      'Authorization' : 'Bearer ' + localStorage.getItem('token')
+    }
+    return this.http.get("http://localhost:8080/auth/profile", {headers: headers});
+  }
 }

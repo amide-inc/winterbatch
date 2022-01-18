@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors');
 const taskRoute = require('./routes/task-route')
 const authRoute = require('./routes/auth-route')
+const productRoute = require('./routes/product-route')
 const port = process.env.port || 8080;
 
 mongoose.connect("mongodb+srv://root:root@todoapp.xcphd.mongodb.net/tododb",
@@ -23,6 +24,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use('/task', taskRoute);
 app.use('/auth', authRoute);
+app.use('/prduct',productRoute)
 app.get('/', (req, res) => {
     res.send("My world")
 });

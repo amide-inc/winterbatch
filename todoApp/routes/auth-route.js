@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
+const checkAuth = require('../middleware/check-auth')
 router.post('/signup', (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if(err) {
@@ -48,8 +49,18 @@ router.post('/login', (req, res) => {
         })
 });
 
-router.get('/profile', (req, res) => {
-
+router.get('/profile', checkAuth, (req, res) => {
+    const id = req.userData.userId
+    User.findById(id)
+        .exec()
+        .then((user) => {
+            if(user) {
+                return res.json({success: true, data: user})
+            }
+            res.json({success: false, message: "Auth Failed"});
+        }).catch((err) => {
+            res.json({success: false, message: "Auth Faild"})
+        })
 });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h3>Todos</h3>
+            <h3>Todos <button class="btn btn-primary" routerLink="/create">Create Task</button></h3>
             <div class="row p-3" *ngFor="let d of data">
                 <div class="card w-100">
                     <div class="card-header bg-warning ">Todo creation date : <span class="badge badge-primary">{{d.date |  date}}</span></div>
