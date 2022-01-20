@@ -3,6 +3,8 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
+
+
 router.post('/signup', (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if(err) {
@@ -62,5 +64,9 @@ router.get('/profile', checkAuth, (req, res) => {
             res.json({success: false, message: "Auth Faild"})
         })
 });
+
+router.post('/payment', (req, res) => {
+    //do somhing here
+})
 
 module.exports = router;

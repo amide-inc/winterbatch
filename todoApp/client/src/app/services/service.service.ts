@@ -30,4 +30,7 @@ export class ServiceService {
   getProducts():Observable<any> {
     return this.http.get('http://localhost:8080/product');
   }
+  createOrder(data):Observable<any>{
+    return this.http.post("http://localhost:8080/payment", data);
+  }
 }

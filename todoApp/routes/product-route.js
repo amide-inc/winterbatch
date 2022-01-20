@@ -26,3 +26,6 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+
+// keyId: rzp_test_Fgu3ru1fIy4Fko
+// keySecret : zrKVPjNGUxsRwpb3bu7w3lfg
