@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use('/task', taskRoute);
 app.use('/auth', authRoute);
-app.use('/prduct',productRoute);
+app.use('/product',productRoute);
 app.get('/', (req, res) => {
     res.send("My world")
 });
