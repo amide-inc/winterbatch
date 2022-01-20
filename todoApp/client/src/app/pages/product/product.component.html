@@ -1,1 +1,17 @@
-<p>product works!</p>
+<div class="container mt-5">
+    <div class="row" *ngIf="products">
+        <div class="col-md-3" *ngFor="let product of products">
+            <div class="card mt-2 shadow" class="img-thumbnail" style="height: 400px; object-fit: contain;">
+                <img src="{{product.image}}" style="height: 120px;">
+                <div class="card-header bg-info mt-2 text-white">{{product.title}}</div>
+                <div class="card-body">
+                    <p>{{product.description}}</p>
+                    <p><b class="text-success">Rs. {{product.price}}</b></p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-warning">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

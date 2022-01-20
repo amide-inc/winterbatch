@@ -26,4 +26,8 @@ export class ServiceService {
   deleteTodo(id):Observable<any> {
     return this.http.delete('http://localhost:8080/task/'+id);
   }
+  //retrive product form db
+  getProducts():Observable<any> {
+    return this.http.get('http://localhost:8080/product');
+  }
 }
